@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Hari Ayah 🤍 Papi Pacha & Daddy Matthew</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1423 0%, #2d1b3d 50%, #3d2447 100%);
+    color: #fff8e7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Floating hearts background */
+  .hearts-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero .small {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ffb4a2;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.5s ease;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffd6a5 0%, #ffafcc 50%, #cdb4db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 2s ease;
+  }
+  .hero .subtitle {
+    font-size: 1.2rem;
+    color: #e8d5f0;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    animation: fadeInUp 2.5s ease;
+  }
+  .hero .names {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 3s ease;
+  }
+  .name-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,180,162,0.3);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ffd6a5;
+    transition: all 0.3s ease;
+  }
+  .name-pill:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255,180,162,0.15);
+    box-shadow: 0 10px 30px rgba(255,180,162,0.3);
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    font-size: 0.9rem;
+    color: #cdb4db;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION */
+  section.dedication {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .dedication-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  .card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 25px;
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,180,162,0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .card:hover::before { opacity: 1; }
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,180,162,0.4);
+    box-shadow: 0 20px 60px rgba(255,180,162,0.2);
+  }
+  .card .emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffd6a5;
+  }
+  .card .role {
+    font-family: 'Dancing Script', cursive;
+    color: #ffafcc;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .card p {
+    line-height: 1.8;
+    color: #e8d5f0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .card .signature {
+    margin-top: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #ffafcc;
+    text-align: right;
+  }
+
+  /* Section title */
+  .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, #ffd6a5, #ffafcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  .section-title p {
+    color: #cdb4db;
+    font-style: italic;
+  }
+
+  /* Reasons section */
+  .reasons {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .reason {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .reason .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #ffafcc;
+    opacity: 0.3;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .reason:hover {
+    transform: scale(1.05);
+    background: rgba(255,180,162,0.1);
+    border-color: #ffafcc;
+  }
+  .reason p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fff8e7;
+  }
+
+  /* Joke section */
+  .joke-section {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .joke-box {
+    background: linear-gradient(135deg, rgba(255,175,204,0.1), rgba(205,180,219,0.1));
+    border: 2px dashed rgba(255,180,162,0.4);
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+  }
+  .joke-box .joke {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #fff8e7;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .joke-btn {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #ffafcc, #cdb4db);
+    color: #1a1423;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .joke-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,175,204,0.4);
+  }
+
+  /* Final message */
+  .final {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .final .big-heart {
+    font-size: 5rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
+  }
+  .final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 1.5rem 0;
+    background: linear-gradient(135deg, #ffd6a5, #ffafcc, #cdb4db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .final p {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e8d5f0;
+  }
+  .final .signed {
+    margin-top: 3rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ffafcc;
+  }
+
+  /* Music toggle */
+  .music-toggle {
+    position: fixed;
+    top: 20px; right: 20px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,180,162,0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  .music-toggle:hover {
+    background: rgba(255,180,162,0.2);
+    transform: scale(1.1);
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: #cdb4db;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 600px) {
+    .hero .names { gap: 1rem; }
+    .name-pill { font-size: 1.4rem; padding: 0.8rem 1.5rem; }
+    .card { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hearts-bg" id="heartsBg"></div>
+
+<div class="music-toggle" id="musicToggle" title="Nyalakan musik 🎵">🎵</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="small">12 November 2026</div>
+  <h1>Selamat Hari Ayah</h1>
+  <p class="subtitle">Untuk dua pria luar biasa yang membuat rumah terasa seperti pelukan, dan hari-hari terasa seperti rumah.</p>
+  <div class="names">
+    <div class="name-pill">🤍 Papi Pacha</div>
+    <div class="name-pill">🤎 Daddy Matthew</div>
+  </div>
+  <div class="scroll-hint">↓ scroll untuk kejutan ↓</div>
+</section>
+
+<!-- DEDICATION -->
+<section class="dedication reveal">
+  <div class="section-title">
+    <h2>Untuk Kalian, Selalu</h2>
+    <p>— dua surat kecil dari hati yang paling dalam —</p>
+  </div>
+
+  <div class="dedication-grid">
+    <div class="card">
+      <span class="emoji">🌙</span>
+      <h2>Papi Pacha</h2>
+      <div class="role">— pelanongan yang paling lembut —</div>
+      <p>Papi, kamu adalah tempat pertama aku mencari ketenangan. Ketika dunia terlalu berisik, cukup mendengar suaramu, semuanya jadi baik-baik saja.</p>
+      <p>Terima kasih sudah menjadi rumah yang tidak pernah aku sadari aku butuhkan. Terima kasih untuk setiap tatapan yang bilang "aku bangga padamu" bahkan ketika kamu tidak mengucapkannya.</p>
+      <p>Kamu bukan hanya ayah. Kamu adalah bukti bahwa cinta itu tenang, sabar, dan selalu pulang.</p>
+      <div class="signature">— dengan seluruh rasa hormat & cinta</div>
+    </div>
+
+    <div class="card">
+      <span class="emoji">☀️</span>
+      <h2>Daddy Matthew</h2>
+      <div class="role">— tawa yang paling hangat —</div>
+      <p>Daddy, kamu adalah alasan kenapa hari Senin pun terasa bisa dinikmati. Kamu membawa warna ke dalam ruangan, dan kehangatan ke dalam setiap obrolan.</p>
+      <p>Terima kasih sudah mengajarkanku bahwa menjadi kuat tidak berarti harus serius. Bahwa cinta juga bisa berbentuk candaan, pelukan erat, dan tawa yang meledak di tengah makan malam.</p>
+      <p>Kamu bukan hanya ayah. Kamu adalah bukti bahwa cinta itu hidup, riang, dan selalu membuatku tersenyum.</p>
+      <div class="signature">— dengan cinta yang tak pernah cukup diucapkan</div>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons reveal">
+  <div class="section-title">
+    <h2>10 Alasan Kami Mencintai Kalian</h2>
+    <p>— dan masih ada ribuan lagi yang tidak cukup halaman —</p>
+  </div>
+  <div class="reasons-grid">
+    <div class="reason"><div class="num">01</div><p>Karena selalu ada kopi hangat yang disiapkan sebelum aku bangun.</p></div>
+    <div class="reason"><div class="num">02</div><p>Karena tawa kalian adalah soundtrack favorit di rumah ini.</p></div>
+    <div class="reason"><div class="num">03</div><p>Karena kalian saling melengkapi dengan cara yang indah.</p></div>
+    <div class="reason"><div class="num">04</div><p>Karena tidak pernah lelah mendengarkan cerita yang itu-itu saja.</p></div>
+    <div class="reason"><div class="num">05</div><p>Karena pelukan kalian terasa seperti pulang ke tempat paling aman.</p></div>
+    <div class="reason"><div class="num">06</div><p>Karena kalian mengajarkanku arti cinta yang dewasa dan sabar.</p></div>
+    <div class="reason"><div class="num">07</div><p>Karena selalu percaya padaku, bahkan saat aku ragu pada diriku sendiri.</p></div>
+    <div class="reason"><div class="num">08</div><p>Karena kalian adalah tim terbaik yang pernah aku saksikan.</p></div>
+    <div class="reason"><div class="num">09</div><p>Karena setiap nasihat kalian, selalu terselip doa di dalamnya.</p></div>
+    <div class="reason"><div class="num">10</div><p>Karena kalian adalah alasan aku tahu seperti apa cinta yang seharusnya.</p></div>
+  </div>
+</section>
+
+<!-- JOKE -->
+<section class="joke-section reveal">
+  <div class="section-title">
+    <h2>Sedikit Candaan Hari Ini</h2>
+    <p>— karena hari ayah tidak boleh terlalu serius —</p>
+  </div>
+  <div class="joke-box">
+    <div class="joke" id="jokeText">Klik tombol di bawah untuk membuka dad jokes edisi Hari Ayah 🤭</div>
+    <button class="joke-btn" id="jokeBtn">Beri Aku Lelucon 🎲</button>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final reveal">
+  <div class="big-heart">💖</div>
+  <h2>Terima Kasih, Papi & Daddy</h2>
+  <p>Untuk setiap pagi yang kalian mulai dengan senyum, untuk setiap malam yang kalian tutup dengan doa, untuk setiap pengorbanan yang tidak pernah kalian sebut — kami melihat. Kami tahu. Kami bersyukur.</p>
+  <p>Kalian adalah bukti bahwa keluarga bukan soal bagaimana bentuknya, tapi seberapa dalam cinta di dalamnya. Dan keluarga kami? Penuh. Lengkap. Bahagia. Karena ada kalian.</p>
+  <p>Selamat Hari Ayah. Semoga Tuhan selalu menjaga hati kalian, memanjangkan umur kalian, dan membalas setiap kebaikan kalian dengan kebahagiaan yang berlipat.</p>
+  <div class="signed">— dari kami, yang sangat mencintai kalian 🤍</div>
+</section>
+
+<footer>
+  Dibuat dengan sepenuh hati · 12 November 2026
+</footer>
+
+<script>
+  // Floating hearts
+  const heartsBg = document.getElementById('heartsBg');
+  const heartEmojis = ['🤍','💖','💕','🤎','💗','✨','🌸'];
+  function createHeart() {
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+    h.style.left = Math.random()*100 + '%';
+    h.style.fontSize = (Math.random()*20 + 12) + 'px';
+    h.style.animationDuration = (Math.random()*10 + 10) + 's';
+    h.style.animationDelay = Math.random()*5 + 's';
+    heartsBg.appendChild(h);
+    setTimeout(()=>h.remove(), 20000);
+  }
+  for(let i=0;i<15;i++) setTimeout(createHeart, i*500);
+  setInterval(createHeart, 1500);
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('active');
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(r=>observer.observe(r));
+
+  // Jokes
+  const jokes = [
+    "Kenapa ayah selalu bawa payung? Karena kalau tidak, nanti kehujanan… eh, tapi kalau hujan ya tetap kehujanan. 🌧️",
+    "Apa bedanya ayah sama WiFi? Kalau WiFi ada password-nya, kalau ayah ada kasih sayangnya — dan GRATIS! 📶",
+    "Ayah itu seperti Google. Tapi lebih baik, karena Google tidak pernah memelukmu setelah kamu gagal. 🤗",
+    "Kenapa ayah tidak pernah kalah main catur? Karena di rumah, ayah selalu juara 1… di hati kami. ♟️",
+    "Daddy bilang: 'Ayah itu superhero.' Tapi superhero kan pakai jubah? Ayah kami pakai daster kalau di rumah. 🦸",
+    "Papi bilang: 'Cinta ayah itu seperti kopi.' Pahit? Tidak. Hangat? Selalu. Bikin melek? Sepanjang hidup. ☕",
+    "Apa persamaan ayah dan matahari? Sama-sama terbit setiap hari, dan bikin hidup kami terang. ☀️",
+    "Kalau ayah jadi aplikasi, rating-nya 5 bintang. Review-nya: 'Tidak bisa di-uninstall dari hati.' ⭐"
+  ];
+  const jokeText = document.getElementById('jokeText');
+  const jokeBtn = document.getElementById('jokeBtn');
+  let lastJoke = -1;
+  jokeBtn.addEventListener('click', ()=>{
+    let idx;
+    do { idx = Math.floor(Math.random()*jokes.length); } while(idx === lastJoke);
+    lastJoke = idx;
+    jokeText.style.opacity = 0;
+    setTimeout(()=>{
+      jokeText.textContent = jokes[idx];
+      jokeText.style.opacity = 1;
+      jokeText.style.transition = 'opacity 0.5s';
+    }, 300);
+  });
+
+  // Music toggle (placeholder — no audio file included)
+  const musicToggle = document.getElementById('musicToggle');
+  let playing = false;
+  musicToggle.addEventListener('click', ()=>{
+    playing = !playing;
+    musicToggle.textContent = playing ? '🔊' : '🎵';
+    musicToggle.title = playing ? 'Musik aktif (tambahkan file audio)' : 'Nyalakan musik';
+    // Jika ingin musik asli, tambahkan:
+    // const audio = new Audio('lagu.mp3');
+    // playing ? audio.play() : audio.pause();
+  });
+
+  // Click card for heart burst
+  document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('click', (e)=>{
+      for(let i=0;i<8;i++){
+        const h = document.createElement('div');
+        h.textContent = '💖';
+        h.style.position = 'fixed';
+        h.style.left = e.clientX + 'px';
+        h.style.top = e.clientY + 'px';
+        h.style.fontSize = '24px';
+        h.style.pointerEvents = 'none';
+        h.style.zIndex = 999;
+        h.style.transition = 'all 1s ease-out';
+        document.body.appendChild(h);
+        setTimeout(()=>{
+          h.style.left = (e.clientX + (Math.random()-0.5)*200) + 'px';
+          h.style.top = (e.clientY - 150 - Math.random()*100) + 'px';
+          h.style.opacity = 0;
+          h.style.transform = 'scale(1.5)';
+        }, 10);
+        setTimeout(()=>h.remove(), 1100);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
